@@ -1,27 +1,39 @@
-import {
-  AfterContentChecked,
-  AfterContentInit,
-  AfterViewChecked,
-  AfterViewInit,
-  Component,
-  DoCheck,
-  OnInit,
-} from '@angular/core';
+import { Component } from '@angular/core';
+
 @Component({
   selector: 'app-root',
   template: `
-    <app-title *ngIf="destruir"></app-title>
-    <br />
-    <button (click)="destruirComponent()">Destruir</button>
-    <router-outlet></router-outlet>
+  <app-food-add></app-food-add>
+  <app-food-list></app-food-list>
+  <!-- <hr>
+  <app-input [contador]="newValue"></app-input>
+  <ng-template [ngIf]="getDados">
+    <h1>{{getDados.nome}}</h1>
+    <h2>{{getDados.idade}}</h2>
+  </ng-template>
+  <app-output (enviaDados)="setDados($event)"></app-output>
+    <button (click)="addValue()">Add</button>
+    <app-new-component></app-new-component>
+    <app-diretivas-atributos> </app-diretivas-atributos>
+    <app-diretivas-estruturais></app-diretivas-estruturais>
+    <router-outlet></router-outlet> -->
   `,
 })
 export class AppComponent {
-  // public valor = 0;
-  public destruir: boolean = true;
-  public destruirComponent(): boolean {
-    return (this.destruir = false);
+  public newValue: number = 0;
+  public getDados: {nome:string, idade:number} | undefined;
+  public addValue(): void {
+    this.newValue +=1;
   }
+
+  public setDados(event:{nome:string, idade:number}){
+    this.getDados = event;
+  }
+  // public valor = 0;
+  // public destruir: boolean = true;
+  // public destruirComponent(): boolean {
+  //   return (this.destruir = false);
+  // }
   // public adicionar(): Number {
   //   return (this.valor += 1);
   // }
