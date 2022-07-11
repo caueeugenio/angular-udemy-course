@@ -3,8 +3,11 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-  <app-food-add></app-food-add>
-  <app-food-list></app-food-list>
+<router-outlet></router-outlet>
+  <!-- <app-food-add></app-food-add> -->
+  <!-- <app-food-list></app-food-list> -->
+  <!-- <app-reactive-forms></app-reactive-forms> -->
+  <!-- <app-forms></app-forms> -->
   <!-- <hr>
   <app-input [contador]="newValue"></app-input>
   <ng-template [ngIf]="getDados">

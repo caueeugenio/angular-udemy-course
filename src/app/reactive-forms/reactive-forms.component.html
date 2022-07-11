@@ -1,0 +1,34 @@
+<form [formGroup]="cadastroForm" (ngSubmit)="submitForm()">
+  <label>Nome</label>
+  <input type="text" formControlName="firstName" maxlength="5" /><br />
+  <br />
+  <span
+    *ngIf="
+      cadastroForm.get('firstName')?.errors &&
+      cadastroForm.get('firstName')?.touched
+    "
+  >
+    <p style="background-color: red">Preencha o nome</p>
+  </span>
+  <span
+    *ngIf="
+    cadastroForm.get('firstName')?.errors?.['minlength']
+  "
+  >
+    <p style="background-color: red">
+      Voce deve preencher o minimo de 5 caracteres, Voce preencheu ate agora
+      {{ cadastroForm.get("firstName")?.errors?.['minlength']?.actualLength }}
+    </p>
+  </span>
+  <br />
+  <br />
+  <label>Ultimo nome</label> <input type="text" formControlName="lastName" />
+  {{ cadastroForm.get("firstName")?.value }}
+  <br />
+  <br />
+  {{ cadastroForm.get("firstName")?.errors | json }}
+  {{ cadastroForm.get("firstName")?.touched | json }}
+  {{ cadastroForm.get("firstName")?.dirty | json }}
+  <br /><br />
+  <button [disabled]="cadastroForm.invalid">Submit</button>
+</form>
