@@ -14,10 +14,11 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { HomeComponent } from './pages/home/home.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 import { PageErrorComponent } from './pages/page-error/page-error.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AppComponent, TitleComponent, DataBindingComponent, DiretivasEstruturaisComponent, DiretivasAtributosComponent, FormsComponent, ReactiveFormsComponent , HomeComponent, SobreComponent, PageErrorComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, SharedModule, FormsModule, ReactiveFormsModule],
+  declarations: [AppComponent, TitleComponent, DataBindingComponent, DiretivasEstruturaisComponent, DiretivasAtributosComponent, FormsComponent, ReactiveFormsComponent , HomeComponent, SobreComponent, PageErrorComponent ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, SharedModule, FormsModule, ReactiveFormsModule, RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })

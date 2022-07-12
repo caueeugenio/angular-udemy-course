@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
 <router-outlet></router-outlet>
+<app-menu></app-menu>
   <!-- <app-food-add></app-food-add> -->
   <!-- <app-food-list></app-food-list> -->
   <!-- <app-reactive-forms></app-reactive-forms> -->
